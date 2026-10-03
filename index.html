@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Olivia Hart — Luxury Real Estate Advisor · Cairo, Egypt</title>
+<!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Sans) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF8F5',
+              sand: '#F5F2EC',
+              ivory: '#F9F7F3',
+              border: '#E7E1D8',
+              taupe: '#C4B5A5',
+              taupeDark: '#8C7E70',
+              charcoal: '#1A1816',
+              charcoalSoft: '#2D2A26',
+              muted: '#78716C',
+              darkAccent: '#121110'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          letterSpacing: {
+            'widest-plus': '0.22em',
+            'super-wide': '0.3em'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #1A1816;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-display {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+  </style>
+<style data-purpose="decorations">
+    /* Subtle watermark text in hero background */
+    .watermark-text {
+      user-select: none;
+      pointer-events: none;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+    }
+    /* Hairline aesthetic dividers */
+    .hairline-border {
+      border-color: #E7E1D8;
+    }
+    .hairline-border-dark {
+      border-color: #2D2A26;
+    }
+    /* Subtle image hover zoom */
+    .img-zoom {
+      transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.04);
+    }
+
+    /* Mobile Navigation Dropdown */
+    body.menu-open header[data-purpose="primary-navigation"] {
+      z-index: 40;
+    }
+    #mobileBackdrop {
+      position: fixed;
+      inset: 0;
+      background: #1A1816;
+      z-index: 50;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #mobileBackdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #mobileNav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      background: #121110;
+      z-index: 60;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      pointer-events: none;
+      overflow-y: auto;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.4);
+    }
+    #mobileNav.open {
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    @media (max-width: 1023px) {
+      #mobileNav {
+        transform: translateX(100%);
+        pointer-events: none;
+      }
+      #mobileNav.open {
+        transform: translateX(0);
+        pointer-events: auto;
+      }
+    }
+</style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-brand-cream text-brand-charcoal selection:bg-brand-taupe selection:text-white">
+<!-- BEGIN: Navigation -->
+<header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b hairline-border transition-all duration-300" data-purpose="primary-navigation">
+<div class="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+<!-- Brand Logo / Signature -->
+<a aria-label="Olivia Hart Home" class="group flex flex-col justify-center" href="#" data-purpose="logo">
+<span class="font-serif-display text-2xl tracking-wider font-normal text-brand-charcoal group-hover:text-brand-taupeDark transition-colors duration-200">
+           OLIVIA HART
+         </span>
+<span class="text-[9px] uppercase tracking-widest-plus text-brand-muted font-medium mt-0.5">
+           Luxury Real Estate Advisor · Cairo
+         </span>
+</a>
+<!-- Mobile Menu Toggle -->
+<button class="lg:hidden flex flex-col items-center justify-center w-10 h-10 gap-[6px] cursor-pointer ml-2" data-purpose="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+<span class="w-5 h-[1.5px] bg-brand-charcoal transition-all duration-300 origin-center"></span>
+<span class="w-5 h-[1.5px] bg-brand-charcoal transition-all duration-300 origin-center"></span>
+<span class="w-5 h-[1.5px] bg-brand-charcoal transition-all duration-300 origin-center"></span>
+</button>
+<!-- Navigation Links -->
+<nav aria-label="Main Menu" class="hidden lg:flex items-center space-x-9 text-xs uppercase tracking-widest font-medium text-brand-charcoalSoft" data-purpose="desktop-nav">
+<a class="hover:text-brand-taupeDark transition-colors py-1" href="#about" data-purpose="nav-about">About</a>
+<a class="hover:text-brand-taupeDark transition-colors py-1" href="#services" data-purpose="nav-services">Services</a>
+<a class="hover:text-brand-taupeDark transition-colors py-1" href="#properties" data-purpose="nav-properties">Selected Properties</a>
+<a class="hover:text-brand-taupeDark transition-colors py-1" href="#areas" data-purpose="nav-areas">Areas</a>
+<a class="hover:text-brand-taupeDark transition-colors py-1" href="#insights" data-purpose="nav-insights">Insights</a>
+</nav>
+
+<!-- Header CTA Action -->
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-charcoal text-brand-cream text-xs uppercase tracking-widest font-medium hover:bg-brand-charcoalSoft hover:shadow-md transition-all duration-200 active:scale-95" href="#contact" data-purpose="header-cta">
+          Book a Consultation
+        </a>
+</div>
+</div>
+</header>
+<!-- END: Navigation -->
+<!-- Mobile Backdrop Overlay -->
+<div class="fixed inset-0 bg-brand-charcoal z-50" id="mobileBackdrop"></div>
+<!-- Mobile Navigation Dropdown -->
+<div class="fixed inset-y-0 right-0 w-[280px] h-full bg-[#121110] z-[60] flex flex-col p-6 space-y-4 overflow-y-auto" data-purpose="mobile-nav" id="mobileNav">
+<button class="self-end w-8 h-8 flex items-center justify-center text-brand-cream hover:text-brand-taupeDark text-xl rounded hover:bg-brand-charcoal/20 transition-colors" data-purpose="mobile-nav-close" aria-label="Close menu">&times;</button>
+<a class="text-sm uppercase tracking-widest font-medium text-brand-cream hover:text-brand-taupeDark transition-colors py-3 border-b border-brand-charcoal/20" href="#about" data-purpose="mobile-nav-about">About</a>
+<a class="text-sm uppercase tracking-widest font-medium text-brand-cream hover:text-brand-taupeDark transition-colors py-3 border-b border-brand-charcoal/20" href="#services" data-purpose="mobile-nav-services">Services</a>
+<a class="text-sm uppercase tracking-widest font-medium text-brand-cream hover:text-brand-taupeDark transition-colors py-3 border-b border-brand-charcoal/20" href="#properties" data-purpose="mobile-nav-properties">Selected Properties</a>
+<a class="text-sm uppercase tracking-widest font-medium text-brand-cream hover:text-brand-taupeDark transition-colors py-3 border-b border-brand-charcoal/20" href="#areas" data-purpose="mobile-nav-areas">Areas</a>
+<a class="text-sm uppercase tracking-widest font-medium text-brand-cream hover:text-brand-taupeDark transition-colors py-3 border-b border-brand-charcoal/20" href="#insights" data-purpose="mobile-nav-insights">Insights</a>
+<a class="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-cream text-brand-darkAccent text-xs uppercase tracking-widest font-medium hover:bg-brand-sand transition-colors" href="#contact" data-purpose="mobile-nav-cta">Book a Consultation</a>
+</div>
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-[92vh] overflow-hidden flex flex-col justify-center pt-8 pb-20 border-b hairline-border bg-gradient-to-b from-brand-sand/40 to-brand-cream" data-purpose="hero-section" id="hero">
+<!-- Massive Background Typographic Watermark (Inspired by Image 1) -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden flex items-start justify-center opacity-[0.05] mt-6 select-none">
+<span class="watermark-text text-[15vw] font-serif font-bold text-brand-charcoal whitespace-nowrap tracking-wider">
+          OLIVIA HART
+        </span>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 w-full my-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Column 1: Portrait Composition (Cutout / Frame of Olivia) -->
+<div class="lg:col-span-4 order-2 lg:order-1 relative">
+<div class="relative mx-auto max-w-sm lg:max-w-none">
+<div class="aspect-[3/4] overflow-hidden rounded-sm bg-brand-sand border hairline-border shadow-sm group">
+<img alt="Olivia Hart, luxury real estate advisor in Cairo, Egypt" data-purpose="hero-portrait" data-purpose="hero-portrait" class="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02] img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJrds67738SX67Rb1J8D3axI7wZUwKBDYIZ8uMY1dzlRcchSOw3XiBLwe3IArQlLZESWErdc_kJyU1rMvHOojdElm4sJNDndkVUKsOpqh_pXf7yrcuSTzTw3Al3VmKlsMGmT6y_subISJAHkBULpCL58ICSi3_Puha1KGnc0_ZyuCUGomjHW4nnG9bRIRBSYYLjka47S9mcliNMkI3v7s789EYdbJdsvUiHtDeFF9e8XfkMh--7RK_"/>
+</div>
+<!-- Floating Pill Caption Underneath -->
+<div class="mt-4 flex items-center justify-between text-xs text-brand-muted px-1">
+<span class="tracking-wide">Olivia Hart</span>
+<span class="text-[10px] tracking-widest uppercase border-b hairline-border pb-0.5">Cairo &amp; North Coast</span>
+</div>
+</div>
+</div>
+<!-- Column 2: Editorial Typographic Stack & Main Pitch -->
+<div class="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center space-y-7">
+<!-- Kicker -->
+<div class="flex items-center space-x-3">
+<span class="w-8 h-px bg-brand-taupe"></span>
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">
+                Cairo · Egypt · Private Real Estate Advisory
+              </p>
+</div>
+<!-- Main Display Headline (Inspired by Image 1 Style) -->
+<h1 class="font-serif-display text-4xl sm:text-5xl lg:text-[52px] leading-[1.12] text-brand-charcoal font-normal">
+              Helping You <span class="font-semibold italic font-serif">BUY</span> the Right Home &amp; <span class="font-semibold italic font-serif">SELL</span> with Confidence.
+            </h1>
+<!-- Subtitle -->
+<p class="text-brand-muted text-base sm:text-lg leading-relaxed font-light max-w-lg">
+              Personalized, white-glove advisory for high-net-worth buyers, sellers, and discreet investors seeking signature architectural properties across Cairo and the Mediterranean coastline.
+            </p>
+<!-- Action Buttons -->
+<div class="pt-2 flex flex-wrap items-center gap-5">
+<a class="inline-flex items-center justify-center px-7 py-3.5 rounded-sm bg-brand-charcoal text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-charcoalSoft hover:shadow-lg transition-all duration-200" href="#properties" data-purpose="hero-cta-properties">
+                Explore Properties
+              </a>
+<a class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-charcoal border-b-2 border-brand-taupe pb-1 hover:border-brand-charcoal transition-all" href="#contact" data-purpose="hero-cta-consult">
+                Book a Consultation <span class="ml-2 font-normal text-sm">→</span>
+</a>
+</div>
+<!-- Metric Highlight / Seal -->
+<div class="pt-6 border-t hairline-border flex items-center gap-6 text-xs text-brand-muted">
+<div>
+<span class="block font-serif text-2xl text-brand-charcoal font-normal">EGP 450M+</span>
+<span class="text-[10px] uppercase tracking-wider">Private Transactions</span>
+</div>
+<div class="w-px h-8 bg-brand-border"></div>
+<div>
+<span class="block font-serif text-2xl text-brand-charcoal font-normal">100%</span>
+<span class="text-[10px] uppercase tracking-wider">Discreet Advisory</span>
+</div>
+</div>
+</div>
+<!-- Column 3: Asymmetrical Secondary Image (New Cairo Architectural Interior) -->
+<div class="lg:col-span-3 order-3 hidden lg:flex flex-col justify-end space-y-3">
+<div class="aspect-[4/5] overflow-hidden rounded-sm bg-brand-sand border hairline-border group relative">
+<img alt="Architectural villa interior in New Cairo" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjhoJjdw6q_Oc8rQDB92cAV5unqC54i4uaNBkfmAa0WiySIHSsuGzaEDOKgZ_LdWt2fFvrC0Wcd8kpmuEYdkO0DWLz2X5h1HCn9oKjzgKZ9lkePpZ1Dupxc4u0iFWZ4OFPnVemkYXKyRQsxCjKsIQixotVwSRzPSHRZ8709qmeRTaPwC8UECqay_BXhZuaHLLdA7oeZj3kz44nFeYiN0gNoJznAr2p5X2wnRINfpfqa0OlSz7Uz92p"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-4 right-4 text-white">
+<p class="text-[9px] uppercase tracking-widest text-brand-taupe font-semibold">Curated Portfolio</p>
+<p class="font-serif text-sm tracking-wide text-white">Private Villa, New Cairo</p>
+</div>
+</div>
+<p class="text-[11px] text-brand-muted leading-relaxed font-light italic text-right">
+              "Architecture that echoes quiet prestige."
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-24 border-b hairline-border bg-brand-cream" data-purpose="about-section" id="about">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">About Olivia</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-brand-charcoal">
+            A refined approach to real estate across <span class="font-serif italic">Cairo</span> and the coast, built on local expertise.
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base font-light max-w-xl mx-auto pt-2">
+            Steering away from high-pressure transactional sales. Providing high-fidelity counsel, discreet portfolio curation, and authentic alignment with your lifestyle.
+          </p>
+</div>
+<!-- Two Column Editorial Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Narrative & Metrics Column -->
+<div class="lg:col-span-6 space-y-8">
+<div class="space-y-5 text-brand-charcoalSoft font-light leading-relaxed text-base">
+<p>
+                Founded in Cairo's prime enclaves, Olivia Hart brings a tailored, architectural perspective to modern luxury acquisitions. Real estate decisions here require more than access—they demand a discerning eye for master-plan integrity, developer legacy, and enduring capital value.
+              </p>
+<p>
+                Whether securing a family sanctuary in the lush fairways of Sheikh Zayed, acquiring an ultra-modern smart villa in New Cairo's Golden Square, or acquiring a seafront estate in Ras El Hekma, my clients receive rigorous confidentiality, clear data, and bespoke attention.
+              </p>
+</div>
+<!-- Hairline Metrics Row -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t hairline-border">
+<div class="space-y-1">
+<span class="font-serif-display text-3xl sm:text-4xl text-brand-charcoal font-light">8+</span>
+<p class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Years Prime Market Advisory</p>
+</div>
+<div class="space-y-1 border-l hairline-border pl-4">
+<span class="font-serif-display text-3xl sm:text-4xl text-brand-charcoal font-light">150+</span>
+<p class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Discerning Clients Guided</p>
+</div>
+<div class="space-y-1 border-l hairline-border pl-4">
+<span class="font-serif-display text-3xl sm:text-4xl text-brand-charcoal font-light">4</span>
+<p class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Core High-Growth Markets</p>
+</div>
+</div>
+<!-- Signature Line -->
+<div class="pt-4 flex items-center gap-4">
+<div class="w-12 h-px bg-brand-taupe"></div>
+<span class="font-serif italic text-lg text-brand-charcoal">Olivia Hart — Private Advisor</span>
+</div>
+</div>
+<!-- Lifestyle Image Vignette Column -->
+<div class="lg:col-span-6">
+<div class="relative">
+<div class="aspect-[4/3] rounded-sm overflow-hidden border hairline-border shadow-sm group">
+<img alt="Sheikh Zayed luxury bespoke kitchen and interior" data-purpose="about-image" data-purpose="about-image" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGNDlVg4ug2W1at2JBjffMU8NN6yfmpV7ZmYpKiSAYQ-bA-nH7LuA7x9ZpgyL1AAInQ4zvLplcZI9NijjXm0lGaeRaxS2fAcfBo6LcpbHIFWXy_wda5ojDqlogq60-wh-SD5kAz2vzSnIljBtXpeC-TP1FJUDkky7KEXF7xXQKduSN9uHSYOipU3D3dWudPLnTp_iIpn6xbu_YZmvzx35x-hGoY_vXfW82WrXrNEeUywnr_7YK-GO4"/>
+</div>
+<!-- Offset Quote Card -->
+<div class="mt-6 md:-mt-12 md:mr-10 md:ml-auto max-w-sm bg-brand-ivory p-6 border hairline-border shadow-lg relative z-20" data-purpose="about-quote-card" data-purpose="about-quote-card">
+<p class="font-serif italic text-base sm:text-lg text-brand-charcoalSoft leading-relaxed">
+                  "Real estate is not just an acquisition; it is an architectural expression of how you wish to live and endure."
+                </p>
+<div class="mt-3 text-[10px] uppercase tracking-widest text-brand-taupeDark font-semibold">
+                  Sheikh Zayed Residence · Cairo
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-24 border-b hairline-border bg-brand-sand/30" data-purpose="services-section" id="services">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<!-- Kicker & Title -->
+<div class="max-w-2xl mb-16 space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">Services</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal text-brand-charcoal">
+            Real Estate, With a More Personal Approach.
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base font-light">
+            Every engagement is conducted with discretion, analytical depth, and tailored market precision.
+          </p>
+</div>
+<!-- 3-Column Architectural Editorial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x hairline-border border-y hairline-border">
+<!-- 01 BUY -->
+<div class="py-10 md:py-12 md:pr-10 space-y-5 flex flex-col justify-between group">
+<div class="space-y-4">
+<span class="text-xs font-serif font-bold text-brand-taupe tracking-widest">01 / BUY</span>
+<h3 class="font-serif-display text-2xl sm:text-3xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                Private Buyer Representation
+              </h3>
+<p class="text-brand-muted text-sm font-light leading-relaxed">
+                Find a home that harmonizes with your lifestyle, family cadence, and wealth strategies. Bespoke property searches, comprehensive off-market scouting, and discreet negotiation.
+              </p>
+</div>
+<a class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-charcoal hover:text-brand-taupeDark pt-4 transition-colors" href="#contact">
+              Inquire About Buying <span class="ml-2 font-normal">→</span>
+</a>
+</div>
+<!-- 02 SELL -->
+<div class="py-10 md:py-12 md:px-10 space-y-5 flex flex-col justify-between group">
+<div class="space-y-4">
+<span class="text-xs font-serif font-bold text-brand-taupe tracking-widest">02 / SELL</span>
+<h3 class="font-serif-display text-2xl sm:text-3xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                Strategic Property Marketing
+              </h3>
+<p class="text-brand-muted text-sm font-light leading-relaxed">
+                Position your home with clarity, editorial visual presentation, and targeted outreach to verified private buyers. We protect your pricing power and home’s narrative integrity.
+              </p>
+</div>
+<a class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-charcoal hover:text-brand-taupeDark pt-4 transition-colors" href="#contact">
+              Inquire About Selling <span class="ml-2 font-normal">→</span>
+</a>
+</div>
+<!-- 03 INVEST -->
+<div class="py-10 md:py-12 md:pl-10 space-y-5 flex flex-col justify-between group">
+<div class="space-y-4">
+<span class="text-xs font-serif font-bold text-brand-taupe tracking-widest">03 / INVEST</span>
+<h3 class="font-serif-display text-2xl sm:text-3xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                Portfolio &amp; Yield Advisory
+              </h3>
+<p class="text-brand-muted text-sm font-light leading-relaxed">
+                Identify high-yield rental assets and generational capital appreciation opportunities across prime Cairo and the newly booming Mediterranean shoreline of Ras El Hekma.
+              </p>
+</div>
+<a class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-charcoal hover:text-brand-taupeDark pt-4 transition-colors" href="#contact">
+              Inquire About Investing <span class="ml-2 font-normal">→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: SelectedProperties -->
+<section class="py-24 border-b hairline-border bg-brand-cream" data-purpose="curated-listings" id="properties">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">Selected Properties</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal text-brand-charcoal">
+              Exceptional spaces, thoughtfully selected.
+            </h2>
+</div>
+<p class="text-xs uppercase tracking-widest text-brand-muted max-w-xs font-medium">
+            Representing premier villas, penthouses, and private estates across Egypt.
+          </p>
+</div>
+<!-- Property Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+<!-- Property 1: New Cairo Villa -->
+<article class="group space-y-4 border hairline-border bg-brand-ivory p-4 rounded-sm transition-all duration-300 hover:shadow-md" data-purpose="property-card" data-purpose="property-card">
+<div class="aspect-[16/10] overflow-hidden bg-brand-sand relative">
+<img alt="The Marquee Residence in New Cairo" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjhoJjdw6q_Oc8rQDB92cAV5unqC54i4uaNBkfmAa0WiySIHSsuGzaEDOKgZ_LdWt2fFvrC0Wcd8kpmuEYdkO0DWLz2X5h1HCn9oKjzgKZ9lkePpZ1Dupxc4u0iFWZ4OFPnVemkYXKyRQsxCjKsIQixotVwSRzPSHRZ8709qmeRTaPwC8UECqay_BXhZuaHLLdA7oeZj3kz44nFeYiN0gNoJznAr2p5X2wnRINfpfqa0OlSz7Uz92p"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-widest px-3 py-1 text-brand-charcoal font-medium">
+                New Cairo · Katameya
+              </div>
+</div>
+<div class="pt-2 px-2 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                    The Marquee Architectural Residence
+                  </h3>
+<p class="text-xs text-brand-muted mt-1 font-light">5 Bedrooms · 6 Bathrooms · 680 sqm Built-Up</p>
+</div>
+<div class="text-right">
+<span class="block text-sm font-semibold tracking-tight text-brand-charcoal">EGP 18,500,000</span>
+<span class="text-[10px] text-brand-muted uppercase tracking-wider">Private Sale</span>
+</div>
+</div>
+<p class="text-xs text-brand-muted leading-relaxed font-light line-clamp-2">
+                Double-height glass living volume, custom Italian travertine floors, heated saltwater pool, and private manicured garden pavilion.
+              </p>
+<div class="pt-2 border-t hairline-border flex justify-between items-center text-xs">
+<a class="uppercase tracking-widest text-[11px] font-semibold text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                  View Private Dossier →
+                </a>
+<span class="text-[10px] uppercase text-brand-taupeDark font-medium">Direct Listing</span>
+</div>
+</div>
+</article>
+<!-- Property 2: Sheikh Zayed Villa -->
+<article class="group space-y-4 border hairline-border bg-brand-ivory p-4 rounded-sm transition-all duration-300 hover:shadow-md" data-purpose="property-card" data-purpose="property-card">
+<div class="aspect-[16/10] overflow-hidden bg-brand-sand relative">
+<img alt="Palm Hills Villa interior in Sheikh Zayed" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGNDlVg4ug2W1at2JBjffMU8NN6yfmpV7ZmYpKiSAYQ-bA-nH7LuA7x9ZpgyL1AAInQ4zvLplcZI9NijjXm0lGaeRaxS2fAcfBo6LcpbHIFWXy_wda5ojDqlogq60-wh-SD5kAz2vzSnIljBtXpeC-TP1FJUDkky7KEXF7xXQKduSN9uHSYOipU3D3dWudPLnTp_iIpn6xbu_YZmvzx35x-hGoY_vXfW82WrXrNEeUywnr_7YK-GO4"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-widest px-3 py-1 text-brand-charcoal font-medium">
+                Sheikh Zayed · West Cairo
+              </div>
+</div>
+<div class="pt-2 px-2 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                    Palm Hills Architectural Villa
+                  </h3>
+<p class="text-xs text-brand-muted mt-1 font-light">4 Bedrooms · 5 Bathrooms · 520 sqm Built-Up</p>
+</div>
+<div class="text-right">
+<span class="block text-sm font-semibold tracking-tight text-brand-charcoal">EGP 24,000,000</span>
+<span class="text-[10px] text-brand-muted uppercase tracking-wider">Turnkey</span>
+</div>
+</div>
+<p class="text-xs text-brand-muted leading-relaxed font-light line-clamp-2">
+                Fluted marble kitchen island, custom oak joinery, floor-to-ceiling garden doors, and serene parkside orientation.
+              </p>
+<div class="pt-2 border-t hairline-border flex justify-between items-center text-xs">
+<a class="uppercase tracking-widest text-[11px] font-semibold text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                  View Private Dossier →
+                </a>
+<span class="text-[10px] uppercase text-brand-taupeDark font-medium">Exclusive Advisory</span>
+</div>
+</div>
+</article>
+<!-- Property 3: North Coast Beachfront -->
+<article class="group space-y-4 border hairline-border bg-brand-ivory p-4 rounded-sm transition-all duration-300 hover:shadow-md" data-purpose="property-card" data-purpose="property-card">
+<div class="aspect-[16/10] overflow-hidden bg-brand-sand relative">
+<img alt="Ras El Hekma Mediterranean Retreat" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlO3f36ffVc_AGkhFgL24Eu0Sp1D4XR2K_EMXMJ52fbbzH6kfAuPPAq25q0pRsv6Lp2qulRintW5Pp1m9mSFGjZHLB59BkQkQKbWo0aZu9-a2IP4oiR-nTPWt_eydnwvrIIAfgqND3vanpA80IUbEp4DV8qKDZ-mdPbkABDyF-T2JPZqezL05tOky_tnibxX_uDnGHzztxXdO9DBESBCc_s3Ef01YnuAwjadwyfTIxqqUdsobl9OtY"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-widest px-3 py-1 text-brand-charcoal font-medium">
+                North Coast · Ras El Hekma
+              </div>
+</div>
+<div class="pt-2 px-2 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                    Ras El Hekma Mediterranean Retreat
+                  </h3>
+<p class="text-xs text-brand-muted mt-1 font-light">6 Bedrooms · 7 Bathrooms · 820 sqm Built-Up</p>
+</div>
+<div class="text-right">
+<span class="block text-sm font-semibold tracking-tight text-brand-charcoal">EGP 19,500,000</span>
+<span class="text-[10px] text-brand-muted uppercase tracking-wider">Front Row</span>
+</div>
+</div>
+<p class="text-xs text-brand-muted leading-relaxed font-light line-clamp-2">
+                Panoramic Mediterranean turquoise shoreline frontage, cantilevered terrace, infinity pool, and seamless indoor-outdoor living.
+              </p>
+<div class="pt-2 border-t hairline-border flex justify-between items-center text-xs">
+<a class="uppercase tracking-widest text-[11px] font-semibold text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                  View Private Dossier →
+                </a>
+<span class="text-[10px] uppercase text-brand-taupeDark font-medium">Rare Horizon</span>
+</div>
+</div>
+</article>
+<!-- Property 4: Madinaty Garden Estate -->
+<article class="group space-y-4 border hairline-border bg-brand-ivory p-4 rounded-sm transition-all duration-300 hover:shadow-md" data-purpose="property-card" data-purpose="property-card">
+<div class="aspect-[16/10] overflow-hidden bg-brand-sand relative">
+<img alt="Madinaty Private Garden Estate" class="w-full h-full object-cover filter saturate-[0.85] img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjhoJjdw6q_Oc8rQDB92cAV5unqC54i4uaNBkfmAa0WiySIHSsuGzaEDOKgZ_LdWt2fFvrC0Wcd8kpmuEYdkO0DWLz2X5h1HCn9oKjzgKZ9lkePpZ1Dupxc4u0iFWZ4OFPnVemkYXKyRQsxCjKsIQixotVwSRzPSHRZ8709qmeRTaPwC8UECqay_BXhZuaHLLdA7oeZj3kz44nFeYiN0gNoJznAr2p5X2wnRINfpfqa0OlSz7Uz92p"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-widest px-3 py-1 text-brand-charcoal font-medium">
+                Madinaty · East Cairo
+              </div>
+</div>
+<div class="pt-2 px-2 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+                    Madinaty Private Garden Estate
+                  </h3>
+<p class="text-xs text-brand-muted mt-1 font-light">4 Bedrooms · 5 Bathrooms · 450 sqm Built-Up</p>
+</div>
+<div class="text-right">
+<span class="block text-sm font-semibold tracking-tight text-brand-charcoal">EGP 12,800,000</span>
+<span class="text-[10px] text-brand-muted uppercase tracking-wider">Under Offer</span>
+</div>
+</div>
+<p class="text-xs text-brand-muted leading-relaxed font-light line-clamp-2">
+                Surrounded by mature golf fairways and private olive trees, offering quiet privacy and turnkey luxury finishes throughout.
+              </p>
+<div class="pt-2 border-t hairline-border flex justify-between items-center text-xs">
+<a class="uppercase tracking-widest text-[11px] font-semibold text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                  View Private Dossier →
+                </a>
+<span class="text-[10px] uppercase text-brand-taupeDark font-medium">Family Compound</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Catalog Note -->
+<div class="mt-14 text-center">
+<p class="text-xs text-brand-muted">
+            Looking for something specific or private off-market estates? 
+            <a class="text-brand-charcoal underline underline-offset-4 font-semibold hover:text-brand-taupeDark ml-1" href="#contact">
+              Request confidential portfolio access.
+            </a>
+</p>
+</div>
+</div>
+</section>
+<!-- END: SelectedProperties -->
+<!-- BEGIN: AreasOfExpertise -->
+<section class="py-24 border-b hairline-border bg-brand-sand/20" data-purpose="geographic-expertise" id="areas">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="max-w-2xl mb-16 space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">Where I Work</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal text-brand-charcoal">
+            Deep local knowledge across the places that matter.
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base font-light">
+            In Egypt's dynamic luxury property market, geographical precision dictates both lifestyle comfort and capital preservation.
+          </p>
+</div>
+<!-- 4 Grid Locations -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Area 1: New Cairo -->
+<div class="bg-brand-cream border hairline-border p-6 rounded-sm space-y-4 hover:border-brand-taupe transition-colors duration-200" data-purpose="area-card" data-purpose="area-card">
+<span class="text-[10px] tracking-widest uppercase font-semibold text-brand-taupeDark">East Cairo Hub</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">New Cairo</h3>
+<p class="text-xs font-light text-brand-muted leading-relaxed">
+              Katameya Heights, Golden Square, Lake View, and Mivida. Home to modern master plans, multinational headquarters, and high-security gated compounds.
+            </p>
+<div class="pt-4 border-t hairline-border">
+<span class="text-[10px] uppercase tracking-wider text-brand-charcoal font-medium">Market: High Liquidity &amp; Expat Demand</span>
+</div>
+</div>
+<!-- Area 2: Sheikh Zayed -->
+<div class="bg-brand-cream border hairline-border p-6 rounded-sm space-y-4 hover:border-brand-taupe transition-colors duration-200" data-purpose="area-card" data-purpose="area-card">
+<span class="text-[10px] tracking-widest uppercase font-semibold text-brand-taupeDark">West Cairo Enclave</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Sheikh Zayed</h3>
+<p class="text-xs font-light text-brand-muted leading-relaxed">
+              Palm Hills, Allegria, and Westown. Celebrated for mature green landscapes, boutique dining, tranquil pace, and world-class golf fairways.
+            </p>
+<div class="pt-4 border-t hairline-border">
+<span class="text-[10px] uppercase tracking-wider text-brand-charcoal font-medium">Market: Generational Family Assets</span>
+</div>
+</div>
+<!-- Area 3: Madinaty -->
+<div class="bg-brand-cream border hairline-border p-6 rounded-sm space-y-4 hover:border-brand-taupe transition-colors duration-200" data-purpose="area-card" data-purpose="area-card">
+<span class="text-[10px] tracking-widest uppercase font-semibold text-brand-taupeDark">Self-Sustained Oasis</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Madinaty</h3>
+<p class="text-xs font-light text-brand-muted leading-relaxed">
+              Autonomous living with expansive green spine avenues, private villa precincts, golf academies, and complete lifestyle infrastructure.
+            </p>
+<div class="pt-4 border-t hairline-border">
+<span class="text-[10px] uppercase tracking-wider text-brand-charcoal font-medium">Market: Steady Long-Term Appreciation</span>
+</div>
+</div>
+<!-- Area 4: North Coast -->
+<div class="bg-brand-cream border hairline-border p-6 rounded-sm space-y-4 hover:border-brand-taupe transition-colors duration-200" data-purpose="area-card" data-purpose="area-card">
+<span class="text-[10px] tracking-widest uppercase font-semibold text-brand-taupeDark">Mediterranean Riviera</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">North Coast</h3>
+<p class="text-xs font-light text-brand-muted leading-relaxed">
+              Ras El Hekma, Sidi Heneish, and Almaza Bay. The premier summer sanctuary undergoing historic international investment and coastal development.
+            </p>
+<div class="pt-4 border-t hairline-border">
+<span class="text-[10px] uppercase tracking-wider text-brand-charcoal font-medium">Market: Exponential Global Influx</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AreasOfExpertise -->
+<!-- BEGIN: TheOliviaDifference -->
+<section class="py-24 border-b hairline-border bg-brand-cream" data-purpose="value-proposition">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 space-y-5 sticky top-28">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">The Olivia Difference</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-brand-charcoal">
+              Why Discerning Clients Choose Private Advisory.
+            </h2>
+<p class="text-brand-muted text-sm sm:text-base font-light leading-relaxed">
+              Real estate advisory is more than listing properties; it is curating lifestyle security, advising on legal nuances, and protecting long-term equity.
+            </p>
+<div class="pt-4">
+<a class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-charcoal border-b hairline-border pb-1 hover:border-brand-charcoal transition-all" href="#contact">
+                Schedule a Private Discussion →
+              </a>
+</div>
+</div>
+<!-- Numbered Pillars Stack -->
+<div class="lg:col-span-7 space-y-8 divide-y hairline-border">
+<div class="pt-6 first:pt-0 space-y-3">
+<div class="flex items-center space-x-4">
+<span class="font-serif text-xl text-brand-taupe">01</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Personal Guidance</h3>
+</div>
+<p class="text-sm text-brand-muted font-light leading-relaxed pl-9">
+                Every search begins with deep listening. We understand your daily rhythms, family plans, and aesthetic preferences before curating candidates.
+              </p>
+</div>
+<div class="pt-6 space-y-3">
+<div class="flex items-center space-x-4">
+<span class="font-serif text-xl text-brand-taupe">02</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Local Expertise &amp; Developer Track Records</h3>
+</div>
+<p class="text-sm text-brand-muted font-light leading-relaxed pl-9">
+                Clear insight into Cairo developments, historical maintenance fees, developer delivery timelines, and off-market private listings not found publicly.
+              </p>
+</div>
+<div class="pt-6 space-y-3">
+<div class="flex items-center space-x-4">
+<span class="font-serif text-xl text-brand-taupe">03</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Thoughtful Negotiation</h3>
+</div>
+<p class="text-sm text-brand-muted font-light leading-relaxed pl-9">
+                Focused, discreet representation through every critical milestone. Protecting valuation, contract clauses, payment structures, and delivery terms.
+              </p>
+</div>
+<div class="pt-6 space-y-3">
+<div class="flex items-center space-x-4">
+<span class="font-serif text-xl text-brand-taupe">04</span>
+<h3 class="font-serif-display text-2xl text-brand-charcoal">Long-Term Value Perspective</h3>
+</div>
+<p class="text-sm text-brand-muted font-light leading-relaxed pl-9">
+                Advice designed around enduring wealth preservation, resale liquidity, and inflation hedging, far beyond the completion of a single transaction.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TheOliviaDifference -->
+<!-- BEGIN: ClientStories -->
+<section class="py-24 border-b hairline-border bg-brand-charcoal text-brand-cream" data-purpose="testimonials" id="testimonials">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupe font-semibold">Client Stories</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal text-white">
+            Trusted through important decisions.
+          </h2>
+<p class="text-neutral-400 text-xs sm:text-sm font-light">
+            Confidential feedback from families and private investors across Cairo.
+          </p>
+</div>
+<!-- Testimonial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="border hairline-border-dark p-8 rounded-sm bg-brand-darkAccent/60 flex flex-col justify-between space-y-6" data-purpose="testimonial-card" data-purpose="testimonial-card">
+<div class="space-y-4">
+<div class="flex text-brand-taupe text-xs tracking-widest">
+                ★★★★★
+              </div>
+<p class="font-serif italic text-lg sm:text-xl text-neutral-200 leading-relaxed">
+                "Olivia transformed our home search. Her deep understanding of Katameya and patient negotiation secured our dream residence completely off-market."
+              </p>
+</div>
+<div class="pt-4 border-t hairline-border-dark">
+<p class="text-xs uppercase tracking-widest text-white font-medium">Layla &amp; Karim M.</p>
+<p class="text-[10px] text-neutral-400 mt-0.5">Private Buyers · New Cairo</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="border hairline-border-dark p-8 rounded-sm bg-brand-darkAccent/60 flex flex-col justify-between space-y-6" data-purpose="testimonial-card" data-purpose="testimonial-card">
+<div class="space-y-4">
+<div class="flex text-brand-taupe text-xs tracking-widest">
+                ★★★★★
+              </div>
+<p class="font-serif italic text-lg sm:text-xl text-neutral-200 leading-relaxed">
+                "In a fluctuating real estate market, Olivia's analytical clarity, pricing forecasts, and calm demeanour were completely indispensable to our portfolio."
+              </p>
+</div>
+<div class="pt-4 border-t hairline-border-dark">
+<p class="text-xs uppercase tracking-widest text-white font-medium">Tarek E.</p>
+<p class="text-[10px] text-neutral-400 mt-0.5">Property Investor · Sheikh Zayed</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="border hairline-border-dark p-8 rounded-sm bg-brand-darkAccent/60 flex flex-col justify-between space-y-6" data-purpose="testimonial-card" data-purpose="testimonial-card">
+<div class="space-y-4">
+<div class="flex text-brand-taupe text-xs tracking-widest">
+                ★★★★★
+              </div>
+<p class="font-serif italic text-lg sm:text-xl text-neutral-200 leading-relaxed">
+                "The presentation and photography of our Ras El Hekma villa was extraordinary. Sold discreetly within three weeks at our exact target valuation."
+              </p>
+</div>
+<div class="pt-4 border-t hairline-border-dark">
+<p class="text-xs uppercase tracking-widest text-white font-medium">Mona S.</p>
+<p class="text-[10px] text-neutral-400 mt-0.5">Seller · North Coast Coastal Villa</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ClientStories -->
+<!-- BEGIN: MarketInsights -->
+<section class="py-24 border-b hairline-border bg-brand-cream" data-purpose="editorial-insights" id="insights">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="space-y-3">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">From the Market</p>
+<h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-normal text-brand-charcoal">
+              Perspective beyond the listing.
+            </h2>
+</div>
+<p class="text-xs uppercase tracking-widest text-brand-muted font-medium">
+            Quarterly market commentaries &amp; advisory briefs
+          </p>
+</div>
+<!-- 3 Column Article Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<article class="space-y-4 border hairline-border p-6 bg-brand-ivory rounded-sm group hover:shadow-sm transition-all duration-200" data-purpose="insights-article" data-purpose="insights-article">
+<div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-brand-taupeDark">
+<span>Buyer's Guide</span>
+<span>5 min read</span>
+</div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+              What Buyers Should Know Before Purchasing in New Cairo's Golden Square
+            </h3>
+<p class="text-xs text-brand-muted font-light leading-relaxed">
+              Evaluating compound maintenance reserves, resale parity, and clubhouse handover schedules before signing.
+            </p>
+<div class="pt-3 border-t hairline-border">
+<a class="text-xs font-semibold uppercase tracking-widest text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                Read Article →
+              </a>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="space-y-4 border hairline-border p-6 bg-brand-ivory rounded-sm group hover:shadow-sm transition-all duration-200" data-purpose="insights-article" data-purpose="insights-article">
+<div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-brand-taupeDark">
+<span>Market Analysis</span>
+<span>4 min read</span>
+</div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+              3 Factors That Influence Property Value &amp; Liquidity in Sheikh Zayed
+            </h3>
+<p class="text-xs text-brand-muted font-light leading-relaxed">
+              A review of road connectivity expansions, school district proximity, and legacy developer reputations.
+            </p>
+<div class="pt-3 border-t hairline-border">
+<a class="text-xs font-semibold uppercase tracking-widest text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                Read Article →
+              </a>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="space-y-4 border hairline-border p-6 bg-brand-ivory rounded-sm group hover:shadow-sm transition-all duration-200" data-purpose="insights-article" data-purpose="insights-article">
+<div class="flex justify-between items-center text-[10px] uppercase tracking-widest text-brand-taupeDark">
+<span>Investment Outlook</span>
+<span>6 min read</span>
+</div>
+<h3 class="font-serif-display text-2xl text-brand-charcoal group-hover:text-brand-taupeDark transition-colors">
+              Ras El Hekma: Global Capital Influx &amp; The New Era of North Coast Real Estate
+            </h3>
+<p class="text-xs text-brand-muted font-light leading-relaxed">
+              Analyzing sovereign infrastructure pledges, Mediterranean marina developments, and long-term rental yields.
+            </p>
+<div class="pt-3 border-t hairline-border">
+<a class="text-xs font-semibold uppercase tracking-widest text-brand-charcoal hover:text-brand-taupeDark" href="#contact">
+                Read Article →
+              </a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: MarketInsights -->
+<!-- BEGIN: SocialPresence -->
+<section class="py-20 border-b hairline-border bg-brand-sand/30" data-purpose="social-grid" id="social-grid">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
+<div class="space-y-2">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">Follow Olivia</p>
+<h2 class="font-serif-display text-2xl sm:text-3xl text-brand-charcoal">
+              Real estate, behind the scenes.
+            </h2>
+</div>
+<a class="text-xs uppercase tracking-widest font-semibold text-brand-charcoal border-b hairline-border pb-1 hover:border-brand-taupeDark" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+            @oliviahart.realestate
+          </a>
+</div>
+<!-- 4 Grid Square Vignettes -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square overflow-hidden bg-brand-cream border hairline-border group relative" data-purpose="social-vignette" data-purpose="social-vignette">
+<img alt="Villa living room interior" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjhoJjdw6q_Oc8rQDB92cAV5unqC54i4uaNBkfmAa0WiySIHSsuGzaEDOKgZ_LdWt2fFvrC0Wcd8kpmuEYdkO0DWLz2X5h1HCn9oKjzgKZ9lkePpZ1Dupxc4u0iFWZ4OFPnVemkYXKyRQsxCjKsIQixotVwSRzPSHRZ8709qmeRTaPwC8UECqay_BXhZuaHLLdA7oeZj3kz44nFeYiN0gNoJznAr2p5X2wnRINfpfqa0OlSz7Uz92p"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs tracking-widest uppercase">
+              New Cairo
+            </div>
+</div>
+<div class="aspect-square overflow-hidden bg-brand-cream border hairline-border group relative" data-purpose="social-vignette" data-purpose="social-vignette">
+<img alt="Bespoke kitchen design detail" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGNDlVg4ug2W1at2JBjffMU8NN6yfmpV7ZmYpKiSAYQ-bA-nH7LuA7x9ZpgyL1AAInQ4zvLplcZI9NijjXm0lGaeRaxS2fAcfBo6LcpbHIFWXy_wda5ojDqlogq60-wh-SD5kAz2vzSnIljBtXpeC-TP1FJUDkky7KEXF7xXQKduSN9uHSYOipU3D3dWudPLnTp_iIpn6xbu_YZmvzx35x-hGoY_vXfW82WrXrNEeUywnr_7YK-GO4"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs tracking-widest uppercase">
+              Sheikh Zayed
+            </div>
+</div>
+<div class="aspect-square overflow-hidden bg-brand-cream border hairline-border group relative" data-purpose="social-vignette" data-purpose="social-vignette">
+<img alt="Mediterranean sunset Ras El Hekma" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlO3f36ffVc_AGkhFgL24Eu0Sp1D4XR2K_EMXMJ52fbbzH6kfAuPPAq25q0pRsv6Lp2qulRintW5Pp1m9mSFGjZHLB59BkQkQKbWo0aZu9-a2IP4oiR-nTPWt_eydnwvrIIAfgqND3vanpA80IUbEp4DV8qKDZ-mdPbkABDyF-T2JPZqezL05tOky_tnibxX_uDnGHzztxXdO9DBESBCc_s3Ef01YnuAwjadwyfTIxqqUdsobl9OtY"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs tracking-widest uppercase">
+              North Coast
+            </div>
+</div>
+<div class="aspect-square overflow-hidden bg-brand-cream border hairline-border group relative" data-purpose="social-vignette" data-purpose="social-vignette">
+<img alt="Olivia Hart private consult" class="w-full h-full object-cover object-top img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJrds67738SX67Rb1J8D3axI7wZUwKBDYIZ8uMY1dzlRcchSOw3XiBLwe3IArQlLZESWErdc_kJyU1rMvHOojdElm4sJNDndkVUKsOpqh_pXf7yrcuSTzTw3Al3VmKlsMGmT6y_subISJAHkBULpCL58ICSi3_Puha1KGnc0_ZyuCUGomjHW4nnG9bRIRBSYYLjka47S9mcliNMkI3v7s789EYdbJdsvUiHtDeFF9e8XfkMh--7RK_"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs tracking-widest uppercase">
+              Advisory
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SocialPresence -->
+<!-- BEGIN: FinalCTA -->
+<section class="py-28 bg-brand-cream relative overflow-hidden" data-purpose="contact-cta" id="contact">
+<div class="max-w-4xl mx-auto px-6 md:px-10 text-center space-y-8">
+<p class="text-[11px] uppercase tracking-super-wide text-brand-taupeDark font-semibold">Private Advisory</p>
+<h2 class="font-serif-display text-4xl sm:text-5xl md:text-6xl font-normal text-brand-charcoal leading-tight">
+          Ready to make your next move?
+        </h2>
+<p class="text-brand-muted text-base sm:text-lg font-light max-w-xl mx-auto leading-relaxed">
+          Whether you are seeking your family’s next sanctuary, selling a signature Cairo home, or exploring Mediterranean coastal investments, let's begin with a confidential conversation.
+        </p>
+<!-- CTA Buttons -->
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-sm bg-brand-charcoal text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-charcoalSoft hover:shadow-lg transition-all duration-200" href="mailto:advisory@oliviahart.com" data-purpose="final-cta-email">
+            Book a Private Consultation
+          </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-sm border hairline-border bg-white text-brand-charcoal text-xs uppercase tracking-widest font-medium hover:bg-brand-sand transition-all duration-200" href="https://wa.me/201000000000" rel="noopener noreferrer" target="_blank" data-purpose="final-cta-whatsapp">
+            Direct WhatsApp Contact
+          </a>
+</div>
+<!-- Privacy Assurance -->
+<p class="text-[11px] uppercase tracking-widest text-brand-muted pt-2 font-medium">
+          Strict Client Confidentiality &amp; Discretion Guaranteed.
+        </p>
+</div>
+</section>
+<!-- END: FinalCTA -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-charcoal text-brand-cream pt-20 pb-12 border-t hairline-border-dark" data-purpose="page-footer">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<!-- Top Columns -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b hairline-border-dark">
+<!-- Brand identity -->
+<div class="md:col-span-5 space-y-4">
+<span class="font-serif-display text-2xl tracking-wider font-normal text-white">
+            OLIVIA HART
+          </span>
+<p class="text-xs uppercase tracking-widest text-brand-taupe font-medium">
+            Luxury Real Estate Advisor · Cairo, Egypt
+          </p>
+<p class="text-neutral-400 text-xs font-light max-w-sm leading-relaxed">
+            Representing signature residences across New Cairo, Sheikh Zayed, Madinaty, and the Mediterranean North Coast.
+          </p>
+</div>
+<!-- Navigation Links Column -->
+<div class="md:col-span-3 space-y-3">
+<p class="text-[10px] uppercase tracking-widest text-brand-taupe font-semibold">Navigation</p>
+<ul class="space-y-2 text-xs text-neutral-300 font-light">
+<li><a class="hover:text-white transition-colors" href="#about">About Olivia</a></li>
+<li><a class="hover:text-white transition-colors" href="#services">Services (Buy · Sell · Invest)</a></li>
+<li><a class="hover:text-white transition-colors" href="#properties">Curated Portfolio</a></li>
+<li><a class="hover:text-white transition-colors" href="#areas">Areas of Expertise</a></li>
+<li><a class="hover:text-white transition-colors" href="#insights">Market Insights</a></li>
+</ul>
+</div>
+<!-- Legal & Contact Column -->
+<div class="md:col-span-4 space-y-3">
+<p class="text-[10px] uppercase tracking-widest text-brand-taupe font-semibold">Private Desk</p>
+<p class="text-xs text-neutral-300 font-light">
+            New Cairo &amp; Sheikh Zayed Advisory Offices<br/>
+            Cairo, Egypt
+          </p>
+<p class="text-xs text-neutral-400 font-light pt-2">
+            Inquiries: <a class="text-neutral-200 underline" href="mailto:concierge@oliviahart.com">concierge@oliviahart.com</a>
+</p>
+<div class="flex items-center space-x-4 pt-2 text-xs text-neutral-300">
+<a class="hover:text-brand-taupe transition-colors" href="#">Instagram</a>
+<span>·</span>
+<a class="hover:text-brand-taupe transition-colors" href="#">LinkedIn</a>
+<span>·</span>
+<a class="hover:text-brand-taupe transition-colors" href="#">WhatsApp</a>
+</div>
+</div>
+</div>
+<!-- Bottom Bar with Notice -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500 font-light">
+<p>© 2025 Olivia Hart. All rights reserved.</p>
+<p class="text-center sm:text-right">
+          Created as a luxury personal brand demonstration.
+        </p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<script>
+  // Mobile menu is controlled by demo-helpers.ts via classList API
+</script>
+</body></html>
