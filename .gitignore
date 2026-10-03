@@ -1,0 +1,6 @@
+/playwright/
+/test-results/
+/demo/recordings/*.webm
+/demo/recordings/*.mp4
+/demo/demo-output/
+!/demo/recordings/

@@ -1,0 +1,21 @@
+{
+  "name": "@olivia-hart/stitch_olivia_hart_luxury_advisory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --project=desktop",
+    "test:mobile": "playwright test --project=mobile",
+    "test:all": "playwright test",
+    "demo": "python3 -m http.server 8080 --directory stitch_olivia_hart_luxury_advisory/olivia_hart_luxury_real_estate_advisor_cairo & playwright test --project=desktop",
+    "showcase": "playwright test --project=desktop --reporter=list",
+    "record": "playwright test --project=desktop demo/record-demo.spec.ts && ls demo/recordings/*.webm | head -1 | xargs -I {} mv {} demo/recordings/olivia-hart-demo-final.webm",
+    "open": "open stitch_olivia_hart_luxury_advisory/olivia_hart_luxury_real_estate_advisor_cairo/code.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
